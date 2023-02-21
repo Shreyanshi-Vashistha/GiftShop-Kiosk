@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Assignment 1 - SHREYANSHI VASHISTHA, 8865466</title>
+    <script async src="./script.js"></script>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <!-- Header and Navbar -->
+    <h1>THE GIFT STOP</h1>
+    <h2>
+      One stop shop to send your loved ones a perfect gift on any occasion!!!
+    </h2>
+    <ul>
+      <li><a href="">Home</a></li>
+      <li><a href="#store">Store</a></li>
+      <li><a href="#contact">Feedback</a></li>
+    </ul>
+
+    <!-- Gift items with button to add to bag -->
+    <div class="row">
+      <div class="column">
+        <h3 id="chocolate">Chocolate</h3>
+        <h4>A tasty treat</h4>
+        <div class="card">
+          <img src="images/chocolate.png" alt="Chocolate" />
+          <p id="priceChoc">$10</p>
+        </div>
+        <button class="addCart" onclick='addGift("Chocolate", 10)'>
+          Add to bag
+        </button>
+      </div>
+
+      <div class="column">
+        <h3 id="perfume">Perfume</h3>
+        <h4>Fragrance that make memories come alive</h4>
+        <div class="card">
+          <img src="images/perfume.png" alt="Perfume" />
+          <p id="pricePerfume">$100</p>
+        </div>
+        <button class="addCart" onclick='addGift("Perfume", 100)'>
+          Add to bag
+        </button>
+      </div>
+
+      <div class="column">
+        <h3 id="watch">Watch</h3>
+        <h4>The bond is timeless</h4>
+        <div class="card">
+          <img src="images/watch.png" alt="Watch" />
+          <p id="priceWatch">$150</p>
+        </div>
+        <button class="addCart" onclick='addGift("Watch", 150)'>
+          Add to bag
+        </button>
+      </div>
+
+      <div class="column">
+        <h3 id="gCard">Gift Cards</h3>
+        <h4>A perfect surprise</h4>
+        <div class="card">
+          <img src="images/giftCard.png" alt="Gift Cards" />
+          <p id="priceGCard">$8</p>
+        </div>
+        <button class="addCart" onclick='addGift("Gift Cards", 8)'>
+          Add to bag
+        </button>
+      </div>
+    </div>
+
+    <!-- Checkout button and total items in cart -->
+    <div style="align-items: center">
+      <p style="float: left">Total Items in cart: &nbsp;</p>
+      <p style="float: left" id="cartValue">0</p>
+    </div>
+    <div>
+      <button id="checkout" onclick="checkout()">Checkout</button>
+    </div>
+
+    <!-- Table to show bill receipt  -->
+    <div style="overflow-x: auto">
+      <table border="1" style="display: none" id="finalTable">
+        <thead>
+          <tr>
+            <td colspan="4">Receipt</td>
+          </tr>
+          <tr>
+            <th>Send To (Name)</th>
+            <th colspan="3" id="toName"></th>
+          </tr>
+          <tr>
+            <th>Gift Name</th>
+            <th>Units</th>
+            <th>Amount ($)</th>
+            <th>Sub Total ($)</th>
+          </tr>
+        </thead>
+        <tbody id="receiptTable"></tbody>
+        <tfoot>
+          <tr>
+            <td></td>
+            <td colspan="2">+ Shipping Charges</td>
+            <td id="shipping"></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td colspan="2">+ GST 13%</td>
+            <td id="gst"></td>
+          </tr>
+
+          <tr>
+            <td colspan="2">Total</td>
+            <td colspan="2" id="final"></td>
+          </tr>
+        </tfoot>
+      </table>
+    </div>
+  </body>
+</html>
